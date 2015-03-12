@@ -1,5 +1,6 @@
 var gulp       = require('gulp');
 var streamify  = require('gulp-streamify');
+var babel      = require('gulp-babel');
 var uglify     = require('gulp-uglify');
 var notify     = require('gulp-notify');
 var gutil      = require('gulp-util');
@@ -21,16 +22,23 @@ var isProduction = process.env.NODE_ENV === 'production';
 
 gulp.task('jshint', function () {
   gulp.src(['views/*.jsx', 'views/**/*.jsx'])
-  .pipe(react()) //Must use react as it preserves lines from jsx to js compile
+  .pipe(babel()) //Must use react as it preserves lines from jsx to js compile
+  .on('error', function(err) {
+    console.error(err.message);
+  })
   .pipe(streamify(jshint({
     laxbreak: true,
     laxcomma: true,
     es3: true,
     esnext: true, //JSHint Harmony/ES6
+    undef: true,
     eqnull: true,
     browser: true,
     jquery: true
   })))
+  .on('error', function(err) {
+    console.error(err.message);
+  })
   .pipe(jshint.reporter('jshint-stylish'))
 });
 
@@ -106,7 +114,7 @@ gulp.task('selenium', function () {
 
 gulp.task('server', function () {
   livereload.listen();
-  nodemon({ script: 'app.js', ext: 'jsx', ignore: [] })
+  nodemon({ script: 'app.js', ext: 'jsx js', ignore: ["static/*.js", "static/**/*.js"] })
   .on('change', ['jshint', 'mocha', 'browserify']) //Only reload jsx on change
 });
 
@@ -117,3 +125,4 @@ if (isProduction) {
 }
 gulp.task('test', ['jshint', 'mocha', 'selenium']);
 gulp.task('build', ['less', 'browserify']);
+
