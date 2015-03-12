@@ -10,7 +10,7 @@ bower install
 ## Entry Points
 React Entrypoint
 ```
-./views/app.jsx
+./views/App.jsx
 ```
 Server Entrypoint
 ```
