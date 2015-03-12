@@ -1,7 +1,12 @@
 # react-nodejs-boilerplate
 React, NodeJS --harmony, React Router, Gulp, Browserify and more Boilerplate. Unopinionated on NodeJS server. Use express, hapi, koa or whatever.
 
-## Install
+## Create a Project
+```
+bash <( curl https://raw.githubusercontent.com/mtomcal/react-nodejs-boilerplate/master/install.sh )
+```
+
+##Install From Source
 ```
 npm install
 bower install
