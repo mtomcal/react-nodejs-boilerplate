@@ -59,3 +59,5 @@ npm install
 bower install
 
 echo "$PACKAGE" > package.json
+
+rm install.sh
