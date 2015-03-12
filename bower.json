@@ -1,8 +1,8 @@
 {
-  "name": "star-wars-ship-browser",
+  "name": "react-nodejs-boilerplate",
   "version": "0.1.0",
   "authors": [
-    "Michael Tomcal <mtomcal@cbtnuggets.com>"
+    "Michael Tomcal <michael@twoeyetech.com>"
   ],
   "license": "MIT",
   "private": true,

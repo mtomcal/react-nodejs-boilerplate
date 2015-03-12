@@ -44,7 +44,7 @@ gulp.task('browserify', function () {
   })
   .pipe(source('bundle.js'))
   .pipe(isProduction ? streamify(uglify('./built/')) : gutil.noop()) //Noop is empty stream for passthru
-  .pipe(gulp.dest('./js/built/'))
+  .pipe(gulp.dest('./static/js'))
   .pipe(livereload())
   .pipe(notify("Rebuilt Website"));
 });
@@ -69,8 +69,7 @@ gulp.task('less', function () {
     cleancss: true,
     yuicompress: true
   })
-  .pipe(rename, 'main.min.css')
-  .pipe(gulp.dest, './css/');
+  .pipe(gulp.dest, './static/css/');
 
   var devLess = lazypipe()
   .pipe(less, {
@@ -78,7 +77,7 @@ gulp.task('less', function () {
     dumpLineNumbers: 'all',
     compress: false
   })
-  .pipe(gulp.dest, './css/');
+  .pipe(gulp.dest, './static/css/');
 
   gulp.src('./less/main.less')
   //Use ternary operator for conditional statements
