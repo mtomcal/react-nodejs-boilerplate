@@ -54,5 +54,8 @@ mkdir ./$name
 cd ./$name
 git clone https://github.com/mtomcal/react-nodejs-boilerplate .
 rm -rf .git
+git init
+npm install
+bower install
 
 echo "$PACKAGE" > package.json
