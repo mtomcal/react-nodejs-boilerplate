@@ -1,13 +1,14 @@
 {
   "name": "react-nodejs-boilerplate",
   "version": "0.1.0",
-  "description": "React, NodeJS, React Router, Gulp, Browserify and more Boilerplate",
+  "description": "React, NodeJS --harmony, React Router, Gulp, Browserify and more Boilerplate",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build",
     "build-production": "NODE_ENV=production gulp build",
-    "serve": "gulp"
+    "serve": "gulp",
+    "serve-production": "NODE_ENV=production node --harmony app.js"
   },
   "author": "Michael A Tomcal <michael@twoeyetech.com> (https://github.com/mtomcal)",
   "license": "MIT",
