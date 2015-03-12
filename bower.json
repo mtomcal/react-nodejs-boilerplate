@@ -1,0 +1,12 @@
+{
+  "name": "star-wars-ship-browser",
+  "version": "0.1.0",
+  "authors": [
+    "Michael Tomcal <mtomcal@cbtnuggets.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+  }
+}
