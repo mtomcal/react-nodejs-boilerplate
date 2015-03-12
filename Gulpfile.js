@@ -37,7 +37,7 @@ gulp.task('jshint', function () {
 gulp.task('browserify', function () {
   watchify(browserify())
   .transform(babelify) //JSX and ES6
-  .require('./views/app.jsx', {entry: true})
+  .require('./views/App.jsx', {entry: true})
   .bundle()
   .on('error', function(err) {
     console.error(err.message);
